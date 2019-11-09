@@ -9,7 +9,13 @@ To use:
 var tracking = require('./TrackApi.js'); to load
 
 USPS:
-tracking.trackUSPS(username, trackingNumber, callback);
+tracking.trackUSPS(username, trackingNumber, function(err, data, response) {
+  if(!err){
+    // This is where the magic will happen
+  } else {
+    console.log(err);
+  }
+});
 
 UPS:
 tracking.trackUPS(usernane, password, accessKey, trackingNumber, callback);
